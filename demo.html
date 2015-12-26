@@ -31,7 +31,16 @@
 <body>
     <script>
         $(function() {
-            $(".box").rightMenu();
+            $(".box").rightMenu({
+                "hr":"",
+                "Google":"http://www.google.com",
+                "Github":"http://www.github.com"
+            });
+//            $("body").rightMenu({
+//                "hr":"",
+//                "Google":"http://www.google.com",
+//                "Github":"http://www.github.com"
+//            });
         })
     </script>
     <div class="box">

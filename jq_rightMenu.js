@@ -11,14 +11,18 @@
             var _li, _a;
             _li = document.createElement("li");
             _a = document.createElement("a");
-            $(_a).appendTo($(_li)).html(x).attr("href", options[x]);
-            $(rightmenu).append($(_li));
+            if (x == "hr") {
+                $(rightmenu).append("<div class='hr'></div>")
+            } else {
+                $(_a).appendTo($(_li)).html(x).attr("href", options[x]);
+                $(rightmenu).append($(_li));
+            }
         };
         elem.append($(rightmenu));
         $(rightmenu).addClass("rightMenu");
         var _height = $(rightmenu).height();
         var _width = $(rightmenu).width();
-        console.log(elem);
+
         $(this).on("contextmenu", function(e) {
             $(rightmenu).hide(0);
             $(rightmenu).show(5);
@@ -26,8 +30,7 @@
                 _y = e.clientY,
                 dox = window.innerWidth || document.body.clientWidth,
                 doy = window.innerHeight || document.body.clientHeight;
-            console.log(_x, _width, dox);
-            console.log(_y, _height, doy);
+
             if (_x + _width > dox) {
                 $(rightmenu).css({
                     "left": _x - _width,
@@ -45,10 +48,11 @@
                 })
             };
             e.preventDefault();
-        }).on("click",function(){
+            e.stopPropagation();
+        }).on("click", function() {
             $(rightmenu).hide(0);
         });
-        $(document).on("click",function(){
+        $(document).on("click contextmenu", function() {
             $(rightmenu).hide(0);
         })
     }

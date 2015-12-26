@@ -2,8 +2,9 @@
     list-style: none;
     display: none;
     font-family: microsoft yahei;
-    width: 280px;
+    width: 200px;
     border: 1px solid #bababa;
+    border-radius: 5px;
     background: #fff;
     position: fixed;
     padding: 2px 0 2px 0px;
@@ -16,7 +17,7 @@
     height: 23px;
     line-height: 23px;
     font-size: .8em;
-    padding: 0 25px; 
+    padding: 0 1.5em; 
 }
 .rightMenu li a small {
     color: #a6a6a6;
